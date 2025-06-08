@@ -54,7 +54,7 @@
   </div>
 
 <audio id="bg-music" loop>
-  <source src="file:///C:/Users/PCC%20Faculty/Downloads/pomodoro_Aisake" type="audio/mpeg" />
+  <source src="ID3" type="audio/mpeg" />
 </audio>
 
 <div class="buttons">
