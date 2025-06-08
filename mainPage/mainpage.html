@@ -1,1 +1,122 @@
-
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Homepage</title>
+    <style>
+        *{
+            text-decoration: none;
+        }
+        body{
+            background-color: #faedcb;
+            margin: 0px;
+        }
+        .temp{
+            background-image: url(temp2.jpg);
+            background-repeat: no-repeat;
+            background-position: center;
+            background-attachment: fixed;
+            background-size: cover;
+        }
+        .navbar{
+            background-color: #8fcaca;
+            padding-left: 80px;
+            padding-right: 80px;
+            padding-top: 10px;
+            padding-bottom: 10px;
+        }
+        .navi{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .logo{
+            font-family: sans-serif;
+            font-size: 50px;
+            font-weight: 700;
+            color: white;
+        }
+        li{
+            list-style: none;
+            display: inline-block;
+        }
+        li a{
+            color: white;
+            font-size: 30px;
+            font-weight: bold;
+            margin-right: 20px;
+        }
+        .body-header{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding-top: 30px;
+            padding-bottom: 30px;
+        }
+        .header{
+            font-size: 90px;
+            font-weight: 800;
+            font-family: sans-serif;
+            color: white;
+        }
+        .sub-header{
+            font-size: 70px;
+            font-weight: 800;
+            font-family: sans-serif;
+            color: white;
+        }
+        .button-body{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding-top: 30px;
+            padding-bottom: 30px;
+        }
+        img{
+            width: 350px;
+            height: 600px;
+            border: 1px;
+            border-style: dashed;
+            border-radius: 50px;
+            font-size: 40px;
+            cursor: pointer;
+            margin: 10px;
+        }
+        img:hover{
+            transform: scale(1.1, 1.1);
+            transition: ease-in-out 0.5s;
+        }
+    </style>
+</head>
+<body>
+    <div class="temp">
+        <nav class="navbar">
+            <div class="navi">
+                <div class="logo">TITLE HERE</div>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </div>
+        </nav>
+        <div class="body-header">
+            <div>
+                <div class="header">TEXT HERE</div>
+                <div class="sub-header">TEXT HERE</div>
+                <div class="sub-header">TEXT HERE</div>
+                <div class="sub-header">TEXT HERE</div>
+            </div>
+        </div>
+    </div>
+    <div class="button-body">
+        <div class="buttons">
+            <a href="#"><img src="1.jpg"></a>
+            <a href="#"><img src="2.jpg"></a>
+            <a href="#"><img src="3.jpg"></a>
+            <a href="#"><img src="4.jpg"></a>
+        </div>
+    </div>
+</body>
+</html>
