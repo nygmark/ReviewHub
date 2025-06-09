@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Pomodoro Technique Infographic</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 2rem;
+      font-family: 'Segoe UI', sans-serif;
+      background: #FAEDCB;
+      color: #333;
+      display: flex;
+      justify-content: center;
+    }
+
+    .infographic {
+      background: #fff;
+      max-width: 900px;
+      width: 100%;
+      padding: 2rem;
+      border-radius: 20px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    }
+
+    h1 {
+      text-align: center;
+      color: #F2C6DE;
+      margin-bottom: 1rem;
+    }
+
+    .section {
+      margin-bottom: 2.5rem;
+    }
+
+    .section h2 {
+      color: #5a5a5a;
+      background-color: #C9E4DE;
+      padding: 0.5rem 1rem;
+      border-left: 5px solid #DBCDF0;
+      border-radius: 8px;
+      margin-bottom: 0.5rem;
+    }
+
+    .section p {
+      line-height: 1.6;
+    }
+
+    .timeline {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: relative;
+      margin: 3rem 0;
+    }
+
+    .timeline::before {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 5%;
+      right: 5%;
+      height: 6px;
+      background: #ddd;
+      z-index: 0;
+    }
+
+    .step {
+      color: white;
+      border-radius: 50%;
+      width: 100px;
+      height: 100px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      font-size: 0.85rem;
+      font-weight: bold;
+      z-index: 1;
+      position: relative;
+    }
+
+    .step:nth-child(1) { background: #C6DEF1; }
+    .step:nth-child(2) { background: #F7D9C4; }
+    .step:nth-child(3) { background: #F2C6DE; }
+    .step:nth-child(4) { background: #DBCDF0; }
+    .step:nth-child(5) { background: #C9E4DE; }
+    .step:nth-child(6) { background: #FAEDCB; color: #333; }
+
+    .benefits ul, .tips ul {
+      list-style-type: none;
+      padding-left: 1rem;
+    }
+
+    .benefits li::before,
+    .tips li::before {
+      content: "✔️";
+      margin-right: 0.5rem;
+      color: #27ae60;
+    }
+
+    .benefits li, .tips li {
+      margin: 0.5rem 0;
+      line-height: 1.5;
+    }
+
+    .footer-note {
+      text-align: center;
+      font-size: 0.9rem;
+      color: #888;
+      margin-top: 3rem;
+    }
+
+    @media (max-width: 700px) {
+      .timeline {
+        flex-direction: column;
+        gap: 1rem;
+      }
+      .timeline::before {
+        display: none;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="infographic">
+    <h1>🍅 The Pomodoro Technique</h1>
+
+    <div class="section intro">
+      <h2>What Is It?</h2>
+      <p>
+        The Pomodoro Technique is a popular time management method created by Francesco Cirillo in the late 1980s. It breaks work into focused intervals called <strong>“Pomodoros”</strong> (Italian for "tomatoes"), traditionally 25 minutes long, followed by short breaks. The goal is to improve concentration, avoid burnout, and boost productivity by working with time, not against it.
+      </p>
+    </div>
+
+    <div class="section how-it-works">
+      <h2>How It Works</h2>
+      <p>Each Pomodoro cycle consists of focused work and scheduled breaks. After 4 cycles, take a longer break.</p>
+      <div class="timeline">
+        <div class="step">25 min<br>Work</div>
+        <div class="step">5 min<br>Break</div>
+        <div class="step">25 min<br>Work</div>
+        <div class="step">5 min<br>Break</div>
+        <div class="step">25 min<br>Work</div>
+        <div class="step">15–30 min<br>Long Break</div>
+      </div>
+    </div>
+
+    <div class="section benefits">
+      <h2>Why Use It?</h2>
+      <ul>
+        <li>Improves focus and attention span</li>
+        <li>Reduces mental fatigue and distractions</li>
+        <li>Encourages regular breaks for better health</li>
+        <li>Helps manage procrastination</li>
+        <li>Increases motivation by tracking progress</li>
+      </ul>
+    </div>
+
+    <div class="section tips">
+      <h2>Tips for Best Results</h2>
+      <ul>
+        <li>Use a timer or Pomodoro app</li>
+        <li>Eliminate distractions before starting</li>
+        <li>Record each session to track productivity</li>
+        <li>Group small tasks into one Pomodoro</li>
+        <li>Use breaks to stretch, hydrate, or breathe</li>
+      </ul>
+    </div>
+
+    <p class="footer-note">Inspired by Francesco Cirillo’s original Pomodoro Technique. 🍅</p>
+  </div>
+</body>
+</html>
