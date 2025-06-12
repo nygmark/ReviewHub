@@ -3,13 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=dev, initial-scale=1.0">
-    <title>Homepage</title>
+    <title>ReviewHub</title>
     <style>
         *{
             text-decoration: none;
         }
         body{
-            background-color: #faedcb;
+            background-color: #f7d9c4;
             margin: 0px;
         }
         .temp{
@@ -20,7 +20,7 @@
             background-size: cover;
         }
         .navbar{
-            background-color: #8fcaca;
+             background: linear-gradient(90deg, #8c08b4, #ffe600);
             padding-left: 80px;
             padding-right: 80px;
             padding-top: 10px;
@@ -32,10 +32,10 @@
             justify-content: space-between;
         }
         .logo{
-            font-family: sans-serif;
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
             font-size: 50px;
             font-weight: 700;
-            color: white;
+            color: rgb(214, 207, 105);
         }
         li{
             list-style: none;
@@ -54,31 +54,44 @@
             padding-top: 30px;
             padding-bottom: 30px;
         }
+        @import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
         .header {
-        font-size: 90px;
+    font-size: 150px;
+    font-weight: 800;
+    font-family: 'Pacifico', cursive;
+    text-align: center;
+    background: linear-gradient(90deg, purple, gold);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
+        }
+        .sub-header {
+        font-size: 50px;
         font-weight: 800;
         font-family: 'Times New Roman', Times, serif;
+        background: linear-gradient(90deg, rgb(0, 0, 0), rgb(17, 26, 10));
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        color: transparent;
+        text-align: center;
+}
+        
+        .button-body {
+         display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 20px;
+        padding-top: 30px;
+        padding-bottom: 30px;
+        background-color: #f7d9c4
+}
+
+        .icon {
         text-align: center;
 
-        background-image: linear-gradient(to right, purple, gold);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-        .sub-header{
-            font-size: 70px;
-            font-weight: 800;
-            font-family: sans-serif;
-            background-image: linear-gradient(to right, rgb(97, 20, 97),  hwb(0 21% 4%));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            text-align: center;
-        }
-        .button-body{
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            padding-top: 30px;
-            padding-bottom: 30px;
         }
         img{
             width: 350px;
@@ -112,7 +125,7 @@
             <div>
                 <div class="header">ReviewHub</div>
                 <div class="sub-header">BSINFOTECH 102-D</div>
-                <div class="sub-header">Gned06</div>
+                <div class="sub-header">GNED06</div>
                 <div class="sub-header">Science, Technology, and Society</div>
             </div>
         </div>
