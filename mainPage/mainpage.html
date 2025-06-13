@@ -8,6 +8,9 @@
         *{
             text-decoration: none;
         }
+        html{
+            scroll-behavior: smooth;
+        }
         body{
             background-color: #e2dfda;
             margin: none;
@@ -169,6 +172,23 @@
         .buttons img:hover{
             transform: scale(1.1, 1.1);
         }
+        .top img{
+            position: fixed;
+            bottom: 40px;
+            right: 32px;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 3px #e49b0f;
+            border-style: solid;
+            transition: ease-in-out 0.5s;
+        }
+        .top img:hover{
+            transform: scale(1.1, 1.1);
+        }
     </style>
 </head>
 <body>
@@ -214,6 +234,9 @@
             <a href="#"><img src="3.jpg"></a>
             <a href="#"><img src="4.jpg"></a>
         </div>
+    </div>
+    <div class="top">
+        <a href="#top"><img src="up.jpg" alt="arrow up"></a>
     </div>
 </body>
 </html>
