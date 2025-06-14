@@ -2,14 +2,43 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Custom Flashcard App</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Student Flashcard App</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+  <div class="info-section">
+    <h2>Why Use Flashcards?</h2>
+    <p>Flashcards are a time-tested method for reviewing and memorizing information, especially useful for subjects that involve terms, definitions, or quick facts. They work by engaging active recall, which strengthens your memory by forcing your brain to retrieve information from memory rather than passively reading it.</p>
+    <p>When students flip a flashcard, they are practicing spaced repetition — one of the most effective study techniques. Whether you're learning programming terms, technical definitions, or software-related abbreviations, flashcards help embed that knowledge deeper through repetition.</p>
+    <p>This simple app allows you to create your own flashcards tailored to your lessons. You can switch between easy and hard modes depending on how fast-paced or relaxed you want your study session to be. Start mastering your topics today, one card at a time!</p>
+
+    <!-- Flashcard app -->
+    <div class="container" id="flashcard-container" style="display: none;">
+      <div class="status-bar">
+        <div id="progress-display">Card 1 of 1</div>
+        <div id="skipped-display">Skipped: 0</div>
+      </div>
+      <div class="flashcard-wrapper" onclick="flipCard()">
+        <div class="flashcard" id="flashcard">
+          <div class="flashcard-side flashcard-front" id="card-front">Question</div>
+          <div class="flashcard-side flashcard-back" id="card-back">Answer</div>
+        </div>
+      </div>
+      <div id="timer-display"></div>
+      <div class="controls">
+        <button onclick="prevCard()">Previous</button>
+        <button onclick="flipCard()">Flip</button>
+        <button onclick="nextCard()">Next</button>
+        <button onclick="skipCard()">Skip</button>
+        <button id="pause-btn" onclick="pauseTimer()" style="display:none;">Pause</button>
+        <button id="resume-btn" onclick="resumeTimer()" style="display:none;">Resume</button>
+      </div>
+    </div>
+  </div>
+
   <div class="container" id="setup-container">
-    <h1>Flashcard Creator</h1>
-    
+    <h1>Create Your Flashcards</h1>
     <label for="card-count">How many flashcards?</label>
     <input type="number" id="card-count" min="1" max="20" />
 
@@ -25,29 +54,8 @@
     </div>
 
     <button onclick="generateInputs()">Next</button>
-    
     <div id="card-inputs"></div>
     <button id="start-button" onclick="startFlashcards()" style="display:none;">Start Flashcards</button>
-  </div>
-
-  <div class="container" id="flashcard-container" style="display: none;">
-    <div class="status-bar">
-      <div id="progress-display">Card 1 of 1</div>
-      <div id="skipped-display">Skipped: 0</div>
-    </div>
-    <div class="flashcard" id="flashcard">
-      <div class="front" id="card-front">Question</div>
-      <div class="back" id="card-back">Answer</div>
-    </div>
-    <div id="timer-display"></div>
-    <div class="controls">
-      <button onclick="prevCard()">Previous</button>
-      <button onclick="flipCard()">Flip</button>
-      <button onclick="nextCard()">Next</button>
-      <button onclick="skipCard()">Skip</button>
-      <button id="pause-btn" onclick="pauseTimer()" style="display:none;">Pause</button>
-      <button id="resume-btn" onclick="resumeTimer()" style="display:none;">Resume</button>
-    </div>
   </div>
 
   <script src="main.js"></script>
