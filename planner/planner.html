@@ -11,7 +11,7 @@
     --accent-color: #333;
     --accent-color-alt: #C6DEF1;
     --text-color: #333;
-    --card-bg: #C6DEF1;
+    --card-bg: #DBCDF0;
     --shadow-color: #F7D9C4;
     --progress-bg: #C9E4DE;
     --progress-bar: #C9E4DE;
@@ -24,7 +24,7 @@
   body {
     background: var(--bg-color);
     color: var(--text-color);
-    font-family: 'Share Tech Mono', monospace, monospace;
+    font-family: 'Share Tech Mono', monospace;
     min-height: 100vh;
     margin: 0;
     display: flex;
@@ -35,7 +35,6 @@
   h1 {
     color: var(--accent-color);
     margin-bottom: 1rem;
-    text-shadow: 
   }
   .planner-container {
     background: var(--card-bg);
@@ -51,30 +50,23 @@
     gap: 0.8rem;
     margin-bottom: 1.5rem;
   }
-  input[type="text"] {
-    flex: 2 1 60%;
+  input[type="text"], input[type="time"] {
     padding: 0.5rem 0.75rem;
     border: none;
     border-radius: 6px;
-    outline: none;
     font-size: 1rem;
     background: #fff;
     color: #333;
     box-shadow: inset 0 0 8px rgba(0, 0, 0, 0.1);
-    transition: box-shadow 0.3s ease;
   }
-  input[type="text"]:focus {
-    box-shadow: inset 0 0 14px var(--accent-color);
+  input[type="text"] {
+    flex: 2 1 60%;
   }
   input[type="time"] {
     flex: 1 1 30%;
-    background: #fff;
-    border: none;
-    border-radius: 6px;
-    color: #333;
-    padding: 0.5rem;
-    font-size: 1rem;
-    box-shadow: inset 0 0 8px rgba(0, 0, 0, 0.1);
+  }
+  input[type="text"]:focus {
+    box-shadow: inset 0 0 14px var(--accent-color);
   }
   button {
     flex: 1 1 100%;
@@ -87,7 +79,6 @@
     border-radius: 8px;
     cursor: pointer;
     transition: background-color 0.3s ease;
-    text-shadow: none
   }
   button:hover {
     background: var(--accent-color-alt);
@@ -114,7 +105,6 @@
   ul#todo-list li span.text {
     flex-grow: 1;
     cursor: pointer;
-    transition: color 0.2s;
   }
   ul#todo-list li.completed span.text {
     text-decoration: line-through;
@@ -183,7 +173,6 @@
     margin-bottom: 0.3rem;
     font-weight: bold;
     letter-spacing: 1px;
-    text-shadow: 
     display: block;
   }
   .progress-bar-container {
@@ -233,7 +222,6 @@
     <ul id="todo-list"></ul>
   </div>
   <div class="notification" id="notification">New to-do added!</div>
-
   <audio id="alarm-sound" src="https://actions.google.com/sounds/v1/alarms/alarm_clock.ogg" preload="auto"></audio>
 
 <script>
@@ -248,7 +236,6 @@
 
   let todos = [];
 
-  // Request notification permission
   if (window.Notification && Notification.permission !== 'granted') {
     Notification.requestPermission();
   }
@@ -269,30 +256,25 @@
     alarmSound.play();
   }
 
-  // Progress tracking
   function updateProgress() {
     const total = todos.length;
     const completed = todos.filter(todo => todo.completed).length;
-    let percent = total === 0 ? 0 : Math.round((completed/total)*100);
+    let percent = total === 0 ? 0 : Math.round((completed / total) * 100);
     progressBar.style.width = percent + '%';
-    // Animate to green if all complete
     if (percent === 100 && total > 0) {
       progressBar.style.background = 'linear-gradient(90deg, var(--progress-bar-complete) 70%, var(--progress-bar-complete) 100%)';
     } else {
       progressBar.style.background = 'linear-gradient(90deg, var(--progress-bar) 50%, var(--progress-bar-complete) 100%)';
     }
-    progressInfo.textContent = ${completed} of ${total} completed (${percent}%);
+    progressInfo.textContent = `${completed} of ${total} completed (${percent}%)`;
   }
 
-  // Check every second if any todo alarm should go off
   setInterval(() => {
     const now = new Date();
-    const currentTime = now.toTimeString().slice(0,5); // "HH:MM"
-
+    const currentTime = now.toTimeString().slice(0, 5);
     todos.forEach((todo, index) => {
       if (!todo.triggered && todo.time === currentTime) {
-        // Show alert and play sound
-        alert(⏰ Alarm: "${todo.text}" is due now!);
+        alert(`⏰ Alarm: "${todo.text}" is due now!`);
         playAlarm();
         todos[index].triggered = true;
       }
@@ -300,7 +282,6 @@
   }, 1000);
 
   function addTodo(text, time) {
-    // Save todo
     todos.push({ text, time, triggered: false, completed: false });
     renderTodos();
     showNotification('New To-Do Added!');
@@ -323,10 +304,8 @@
     todoList.innerHTML = '';
     todos.forEach((todo, i) => {
       const li = document.createElement('li');
-      if (todo.completed) {
-        li.classList.add('completed');
-      }
-      // Checkbox for completed
+      if (todo.completed) li.classList.add('completed');
+
       const checkbox = document.createElement('input');
       checkbox.type = 'checkbox';
       checkbox.classList.add('checkbox');
@@ -363,20 +342,16 @@
     e.preventDefault();
     const text = todoInput.value.trim();
     const time = todoTime.value;
-
     if (!text || !time) {
       alert('Please enter a task and a time!');
       return;
     }
-
     addTodo(text, time);
-
     todoInput.value = '';
     todoTime.value = '';
     todoInput.focus();
   });
 
-  // Initial progress bar update
   updateProgress();
 </script>
 </body>
